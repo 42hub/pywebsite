@@ -25,17 +25,18 @@ mail = Mail(app)
 
 app = Flask(__name__)
 
+
 @app.route('/')
+def redirect_to_link():
+    return redirect('https://www.youtube.com/watch?v=fC7oUOUEEi4')
+
+@app.route('/index')
 def index():
     return render_template('index.html')
 
 @app.route('/about')
 def about():
     return "lol"
-
-@app.route('/redirect')
-def redirect_to_link():
-    return redirect('https://www.youtube.com/watch?v=fC7oUOUEEi4')
 
 """@app.route('/print')
 def printMsg():
