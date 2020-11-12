@@ -29,6 +29,14 @@ app = Flask(__name__)
 def redirect_to_link():
     return redirect('https://www.youtube.com/watch?v=fC7oUOUEEi4')
 
+@app.route('/about')
+def about():
+	return "work in progress"
+
+@app.route('/project')
+def project():
+	return "work in progress"
+
 @app.route('/print')
 def printMsg():
     app.logger.warning('testing warning log')
@@ -47,6 +55,8 @@ def exit():
 	while True:
 		cmd = input()
 		if cmd == "":
+			break
+		elif cmd == "exit":
 			break
 
 if __name__ == "__main__":
